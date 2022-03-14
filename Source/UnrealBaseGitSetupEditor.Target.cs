@@ -9,6 +9,10 @@ public class UnrealBaseGitSetupEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.AddRange( new string[] { "UnrealBaseGitSetup" } );
+		ExtraModuleNames.AddRange( new string[]
+		{
+			"UnrealBaseGitSetup",
+			"DMGSystem"
+		} );
 	}
 }
