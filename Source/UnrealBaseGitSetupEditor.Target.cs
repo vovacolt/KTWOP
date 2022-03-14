@@ -12,7 +12,8 @@ public class UnrealBaseGitSetupEditorTarget : TargetRules
 		ExtraModuleNames.AddRange( new string[]
 		{
 			"UnrealBaseGitSetup",
-			"DMGSystem"
+			"DMGSystem",
+			"TurretSystem"
 		} );
 	}
 }
