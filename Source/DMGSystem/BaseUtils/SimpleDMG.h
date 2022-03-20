@@ -19,11 +19,22 @@ struct FSimpleDMG
 	GENERATED_BODY()
 
 public:
+#pragma region ""
 	UPROPERTY(BlueprintReadWrite)
 	DMGType type;
 
 	UPROPERTY(BlueprintReadWrite)
-	float    strength;
+	float strength;
+
+	
+#pragma region METHODS
+public:
+	FSimpleDMG();
+
+
+	void DoFoo();
+#pragma endregion METHODS
+	
 };
 
 USTRUCT(BlueprintType)

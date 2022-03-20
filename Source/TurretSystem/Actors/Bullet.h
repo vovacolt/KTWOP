@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework\Actor.h"
+#include "TurretSystem\BulletAbilitySystemComponent.h"
 #include "Bullet.generated.h"
 
 UCLASS()
@@ -15,6 +16,8 @@ public:
 	// Sets default values for this actor's properties
 	ABullet();
 
+	UPROPERTY(BlueprintReadOnly)
+	UBulletAbilitySystemComponent* AbilitySystemComponent;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
