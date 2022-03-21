@@ -1,17 +1,14 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 using UnrealBuildTool;
 
-public class TurretSystem : ModuleRules
+public class EnemySystem : ModuleRules
 {
-	public TurretSystem(ReadOnlyTargetRules Target) : base(Target)
+	public EnemySystem(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", 
-			"CoreUObject", "Engine", "InputCore",
-			"GameplayAbilities", "GameplayTags", "GameplayTasks",
-		});
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

@@ -3,12 +3,27 @@
 
 #include "Bullet.h"
 
+#include "Components\SphereComponent.h"
+
 
 // Sets default values
 ABullet::ABullet()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	RootComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Bullet"));
+	
 	PrimaryActorTick.bCanEverTick = true;
+	
+	AbilitySystemComponent = CreateDefaultSubobject<UBulletAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+	AbilitySystemComponent->SetIsReplicated(true);
+
+
+	CollisionComponent = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionSphere"));
+	CollisionComponent->InitSphereRadius(BulletSpeed);
+	CollisionComponent->SetCollisionProfileName(TEXT("Pawn"));
+	CollisionComponent->SetupAttachment(RootComponent);
+	CollisionComponent->SetHiddenInGame(false);
+
+	
 }
 
 // Called when the game starts or when spawned
@@ -22,5 +37,18 @@ void ABullet::BeginPlay()
 void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if ((TargetEnemy == nullptr) || (!IsValid(TargetEnemy)))
+	{
+		this->Destroy();
+	}
+	TargetEnemy->GetActorLocation();
+	FVector newLocation = FMath::VInterpTo(
+		TargetEnemy->GetActorLocation(),
+		RootComponent->GetComponentLocation(),
+		DeltaTime,
+		BulletSpeed
+		);
+	RootComponent->SetWorldLocation(newLocation);
+	
 }
 

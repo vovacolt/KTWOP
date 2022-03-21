@@ -8,7 +8,13 @@ public class UnrealBaseGitSetup : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "DMGSystem" });
+		PublicDependencyModuleNames.AddRange(new string[] { 
+			"Core", 
+			"CoreUObject", 
+			"Engine",
+			"InputCore", 
+			"DMGSystem"
+		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
 
