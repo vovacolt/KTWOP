@@ -18,6 +18,11 @@
 			"Name": "TurretSystem",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "EnemySystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	]
 }
