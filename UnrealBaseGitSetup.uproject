@@ -21,6 +21,11 @@
 			"AdditionalDependencies": [
 				"GameplayAbilities"
 			]
+		},
+		{
+			"Name": "EnemySystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	],
 	"Plugins": [
